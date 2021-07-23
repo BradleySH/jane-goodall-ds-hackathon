@@ -1,0 +1,23 @@
+@import "@arcgis/core/assets/esri/themes/light/main.css";
+@import 'https://js.arcgis.com/4.19/@arcgis/core/assets/esri/themes/light/main.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+@import "https://services7.arcgis.com/3bqugizTugjwpQW2/arcgis/rest/services/redlist_species_data_7b024e640fd848a2adf08e43737b5cb3_1/FeatureServer/0";
+
+#root{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+.mapDiv {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  
+}
+body{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Poppins', sans-serif;
+}
