@@ -3,11 +3,12 @@ import Bookmarks from '@arcgis/core/widgets/Bookmarks';
 import Expand from '@arcgis/core/widgets/Expand';
 import MapView from "@arcgis/core/views/MapView";
 import WebMap from "@arcgis/core/WebMap";
-import  FeatureLayer  from "@arcgis/core/layers/FeatureLayer";
+import VectorTileLayer from "@arcgis/core/layers/VectorTileLayer";
+//import esriConfig from "@arcgis/core/config";
 
 import "./app.scss"; 
 
-function Map() {
+function DataMap() {
 
   const mapDiv = useRef(null);
 
@@ -16,15 +17,23 @@ function Map() {
       /**
        * Initialize application
        */
-      const webmap = new WebMap({
-        portalItem: {
-          id: "de9ec63cc6144521b9659709475f8700",
-        }
-      });
+      //esriConfig.apiKey = "AAPK560aca4b3ebb4ecb91b509b7869b30c2sEqoxgjUNqKblO52_XY5yZh2ar1WDooMgg-HMhtzeHo-9yKZaJ4eabnNe0Bs7_x7";
+
+    const layer = new VectorTileLayer({
+      url: "https://vectortileservices7.arcgis.com/3bqugizTugjwpQW2/arcgis/rest/services/species_data/VectorTileServer/resources/styles/root.json"
+    });
+
+    const map = new WebMap({
+      basemap: "arcgis-dark-gray",
+      layers: [layer]
+    });
 
       const view = new MapView({
         container: mapDiv.current,
-        map: webmap,
+        map: map,
+        center: [21.758663, -4.038333],
+        zoom: 4.5, // scale: 72223.819286
+
       });
       
       
@@ -45,9 +54,9 @@ function Map() {
       view.ui.add(bkExpand, "top-right");
 
       // bonus - how many bookmarks in the webmap?
-      webmap.when(() => {
-        if (webmap.bookmarks && webmap.bookmarks.length) {
-          console.log("Bookmarks: ", webmap.bookmarks.length);
+      map.when(() => {
+        if (map.bookmarks && map.bookmarks.length) {
+          console.log("Bookmarks: ", map.bookmarks.length);
         } else {
           console.log("No bookmarks in this webmap.");
         }
@@ -58,4 +67,4 @@ function Map() {
   return <div className="mapDiv" ref={mapDiv}></div>;
 }
 
-export default Map;
+export default DataMap;

@@ -1,11 +1,11 @@
 import React from "react";
 import "./app.scss"
-import Map from "./Map"
+import DataMap from "./Map"
 
 function App() {
 
   return (
-    <Map />
+    <DataMap />
   );
 }
 

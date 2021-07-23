@@ -1,0 +1,39 @@
+{
+    "version": 8,
+    "sprite": "https://vectortileservices7.arcgis.com/3bqugizTugjwpQW2/arcgis/rest/services/species_data/VectorTileServer/resources/sprites/sprite",
+    "glyphs": "https://vectortileservices7.arcgis.com/3bqugizTugjwpQW2/arcgis/rest/services/species_data/VectorTileServer/resources/fonts/{fontstack}/{range}.pbf",
+    "sources": {
+      "species_data": {
+        "type": "vector",
+        "bounds": [
+          -15.5564,
+          -8.36817,
+          31.9748,
+          13.5698
+        ],
+        "minzoom": 0,
+        "maxzoom": 23,
+        "scheme": "xyz",
+        "url": "https://vectortileservices7.arcgis.com/3bqugizTugjwpQW2/arcgis/rest/services/species_data/VectorTileServer/",
+        "tiles": [
+          "https://vectortileservices7.arcgis.com/3bqugizTugjwpQW2/arcgis/rest/services/species_data/VectorTileServer/tile/{z}/{y}/{x}.pbf"
+        ]
+      }
+    },
+    "layers": [
+      {
+        "id": "redlist_species_data_7b024e640fd848a2adf08e43737b5cb3_1",
+        "type": "fill",
+        "source": "species_data",
+        "source-layer": "redlist_species_data_7b024e640fd848a2adf08e43737b5cb3_1",
+        "layout": {},
+        "paint": {
+          "fill-color": "rgba(76,129,205,0.75)",
+          "fill-outline-color": "#000000"
+        }
+      }
+    ],
+    "metadata": {
+      "arcgisStyleUrl": "https://vectortileservices7.arcgis.com/3bqugizTugjwpQW2/arcgis/rest/services/species_data/VectorTileServer/resources/styles/root.json"
+    }
+  }
